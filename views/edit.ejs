@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <nav><a href="/">Go Back</a></nav>
+    <h1>Edit</h1>
+    <form class="edit" action="/<%=post._id%>?_method=PUT" method="post">
+      Title: <input type="text" name="title" value="<%=post.title%>"><br>
+      Text: <input type="text" name="text" value="<%=post.text%>"><br>
+      Image: <input type="url" name="image" value="<%=post.image%>"><br>
+      Video: <input type="url" name="video" value="<%=post.video%>"><br>
+      <input type="submit" name="" value="Submit changes">
+    </form>
+  </body>
+</html>

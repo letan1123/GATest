@@ -7,6 +7,9 @@ const mongoose = require ('mongoose');
 const app = express ();
 const db = mongoose.connection;
 require('dotenv').config()
+const Social = require('./models/schema.js')
+const seed = require('./models/seed.js')
+
 //___________________
 //Port
 //___________________
@@ -46,13 +49,76 @@ app.use(express.json());// returns middleware that only parses JSON - may or may
 app.use(methodOverride('_method'));// allow POST, PUT and DELETE from a form
 
 
+
 //___________________
 // Routes
 //___________________
+
+
+app.get('/:id/edit', (req,res) => {
+  Social.findById(req.params.id, (err,data) => {
+    res.render('edit.ejs', {
+      post: data
+    })
+  })
+})
+
+
+app.put('/:id', (req,res) => {
+  Social.findByIdAndUpdate(req.params.id, req.body, {new:true}, (err, data) => {
+    res.redirect('/')
+  })
+})
+
+
+app.delete('/:id', (req,res) => {
+  Social.findByIdAndRemove(req.params.id, (err,data) => {
+    res.redirect('/')
+  })
+})
+
+
+app.get('/new', (req,res) => {
+  res.render('new.ejs')
+})
+
+
+app.post('/', (req,res) => {
+  Social.create(req.body, (err, data) => {
+    res.redirect('/')
+  })
+})
+
+
+app.get('/seed', (req,res) => {
+  Social.create(seed, (err,seed) => {
+    res.redirect('/')
+  })
+})
+
+
+app.get('/:id', (req,res) => {
+  Social.findById(req.params.id, (err,data) => {
+    res.render('show.ejs', {
+      post:data
+    })
+  })
+})
+
+
+app.use('/', (req,res) => {
+  Social.find({}, (err,data) => {
+    res.render('index.ejs', {
+      posts: data
+    })
+  })
+})
+
+
 //localhost:3000
-app.get('/' , (req, res) => {
-  res.send('Hello World!');
-});
+// app.get('/' , (req, res) => {
+//   res.send('Hello World!');
+// });
 
 //___________________
 //Listener
