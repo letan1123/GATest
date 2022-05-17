@@ -2,23 +2,64 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
-    <title></title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdn.linearicons.com/free/1.0.0/icon-font.min.css">
+    <script src="https://kit.fontawesome.com/973db4e21f.js" crossorigin="anonymous"></script>
+    <title>Main Page</title>
   </head>
   <body>
-    <h1>Index</h1>
-    <h2><a class="new" href="/new">Post something</a></h2>
+    <nav class="left-nav">
+      <ul class ="ul-nav">
+        <li class = "li-nav">
+          <a class="a-nav" href="#">
+            <i class="fa-solid fa-angles-right"></i>
+          </a>
+        </li>
+        <li class = "li-nav">
+          <a class="a-nav" href="/new">
+            <span class="lnr lnr-rocket"></span><div class ='text'>New Post</div>
+          </a>
+        </li>
+        <li class = "li-nav">
+          <a class="a-nav" href="#">
+            <span class="lnr lnr-sun"></span><div class ='text'>Text</div>
+          </a>
+        </li>
+        <li class = "li-nav">
+          <a class="a-nav" href="#">
+            <span class="lnr lnr-star"></span><div class ='text'>Text</div>
+          </a>
+        </li>
+        <li class = "li-nav">
+          <a class="a-nav" href="#">
+            <i class="fa-brands fa-angellist"></i><div class ='text'>Text</div>
+          </a>
+        </li>
+      </ul>
+    </nav>
+    <main>
     <div class="container">
-      <% for (let i = 0; i < posts.length; i ++) { %>
-        Title: <%=posts[i].title%><br>
-        Text: <%=posts[i].text%> <br>
-        Image: <img src="<%=posts[i].image%>" alt=""><br>
-        Video: <iframe src="<%=posts[i].video%>" width="350" height="350"></iframe><br>
-        <button class = "index-button" type="button" name="button"><a class="index-info-text" href="/<%=posts[i].id%>">Info</a></button>
-        <button type="button" name="button"><a href="/<%=posts[i]._id%>/edit">Edit Post</a></button>
-                <form  action="/<%=posts[i].id%>?_method=DELETE" method="POST">
-                  <input class="delete" type="submit" value="Delete">
-                </form>
+      <h1>New Feeds</h1>
+        <% for (let i = 0; i < posts.length; i ++) { %>
+          <div class="post-container">
+            <div class="title-top">
+              <%=posts[i].title%><br>
+            </div>
+            <div class="text-top">
+              <%=posts[i].text%> <br>
+            </div>
+          <img src="<%=posts[i].image%>" alt=""><br>
+          <iframe src="<%=posts[i].video%>" width="350" height="350"></iframe><br>
+            <div class="bottom-buttons">
+              <button class = "index-button" type="button" name="button"><a class="index-info-text" href="/<%=posts[i].id%>">Check it!!</a></button>
+              <button type="button" name="button"><a href="/<%=posts[i]._id%>/edit">Edit it!!</a></button>
+                  <form  action="/<%=posts[i].id%>?_method=DELETE" method="POST">
+                    <input class="delete" type="submit" value="Delete it!!">
+                  </form>
+            </div>
+          </div>
       <% } %>
     </div>
+    </main>
   </body>
 </html>
