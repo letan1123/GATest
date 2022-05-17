@@ -11,7 +11,7 @@
     <nav class="left-nav">
       <ul class ="ul-nav">
         <li class = "li-nav">
-          <a class="a-nav" href="#">
+          <a class="a-nav" href="/">
             <i class="fa-solid fa-angles-right"></i>
           </a>
         </li>
@@ -21,18 +21,18 @@
           </a>
         </li>
         <li class = "li-nav">
-          <a class="a-nav" href="#">
-            <span class="lnr lnr-sun"></span><div class ='text'>Text</div>
+          <a class="a-nav" href="https://github.com/letan1123" target="_blank">
+            <span class="lnr lnr-sun"></span><div class ='text'>Github</div>
+          </a>
+        </li>
+        <li class = "li-nav">
+          <a class="a-nav" href="https://www.linkedin.com/in/tan-le-164679233/" target="_blank">
+            <span class="lnr lnr-star"></span><div class ='text'>LinkedIn</div>
           </a>
         </li>
         <li class = "li-nav">
           <a class="a-nav" href="#">
-            <span class="lnr lnr-star"></span><div class ='text'>Text</div>
-          </a>
-        </li>
-        <li class = "li-nav">
-          <a class="a-nav" href="#">
-            <i class="fa-brands fa-angellist"></i><div class ='text'>Text</div>
+            <i class="fa-brands fa-angellist"></i><div class ='text'>Mini-Game</div>
           </a>
         </li>
       </ul>
@@ -48,13 +48,13 @@
             <div class="text-top">
               <%=posts[i].text%> <br>
             </div>
-          <img src="<%=posts[i].image%>" alt=""><br>
-          <iframe src="<%=posts[i].video%>" width="350" height="350"></iframe><br>
+            <img src="<%=posts[i].image%>" alt=""><br>
+            <iframe src="<%=posts[i].video%>" width="350"   height="350"></iframe><br>
             <div class="bottom-buttons">
-              <button class = "index-button" type="button" name="button"><a class="index-info-text" href="/<%=posts[i].id%>">Check it!!</a></button>
-              <button type="button" name="button"><a href="/<%=posts[i]._id%>/edit">Edit it!!</a></button>
+              <button class = "show-button" type="button" name="button"><a class="index-info-text" href="/<%=posts[i].id%>"><i class="fa-regular fa-eye"></i></a></button>
+              <button type="edit-button" name="button"><a href="/<%=posts[i]._id%>/edit"><i class="fa-regular fa-pen-to-square"></i></a></button>
                   <form  action="/<%=posts[i].id%>?_method=DELETE" method="POST">
-                    <input class="delete" type="submit" value="Delete it!!">
+                    <i class="fa-solid fa-trash-can"><input class="delete" type="submit" value="Delete it!!"></i>
                   </form>
             </div>
           </div>

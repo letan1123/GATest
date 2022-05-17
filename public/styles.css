@@ -22,8 +22,7 @@ h1 {
 }
 
 main {
-  background:url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRE6jJ-y_ORbt_TzvYgq1HoB2qyqm_TXZkiFw&usqp=CAU');
-  background-size: cover;
+  background:#DBF7F6;
 }
 .container{
   display:flex;
@@ -44,9 +43,7 @@ main {
   width:80%;
   margin-bottom:2em;
   padding:2em;
-  background: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ3LoJE7Wqjotg3OIZ1AN501iZWz7wQJLEfBw&usqp=CAU");
-  background-size: cover;
-  background-position: center;
+  background: #F7F3DC;
 }
 
 .title-top {
@@ -61,6 +58,7 @@ main {
 }
 .text-top {
   display:flex;
+  flex-wrap: wrap;
   justify-content: flex-start;
   background:pink;
   width: 80%;
@@ -68,6 +66,7 @@ main {
   padding:20px;
   border-radius: 20px;
   margin-bottom: 2em;
+  overflow:scroll;
 }
 
 img {
@@ -179,4 +178,12 @@ span, i{
 
 .left-nav:hover .fa-solid {
   transform: rotate(-180deg)
+}
+
+.delete {
+  display:none;
+}
+
+.fa-solid:hover .delete{
+  display:block;
 }

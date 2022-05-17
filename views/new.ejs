@@ -2,17 +2,59 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
-    <title></title>
+    <link rel="stylesheet" href="/newstyles.css">
+    <link rel="stylesheet" href="https://cdn.linearicons.com/free/1.0.0/icon-font.min.css">
+    <script src="https://kit.fontawesome.com/973db4e21f.js" crossorigin="anonymous"></script>
+    <title>Generating New Post</title>
   </head>
   <body>
-    <nav><a href="/">Go Back</a></nav>
-    <h1>New</h1>
-    <form class="new" action="/" method="post">
-      Title: <input type="text" name="title" value=""><br>
-      Text: <input type="text" name="text" value=""><br>
-      Image: <input type="url" name="image" value=""><br>
-      Video: <input type="url" name="video" value=""><br>
-      <input type="submit" name="" value="Submit post">
-    </form>
+    <nav class="left-nav">
+      <ul class ="ul-nav">
+        <li class = "li-nav">
+          <a class="a-nav" href="/">
+            <i class="fa-solid fa-angles-right"></i>
+          </a>
+        </li>
+        <li class = "li-nav">
+          <a class="a-nav" href="/new">
+            <span class="lnr lnr-rocket"></span><div class ='text'>New Post</div>
+          </a>
+        </li>
+        <li class = "li-nav">
+          <a class="a-nav" href="https://github.com/letan1123" target="_blank">
+            <span class="lnr lnr-sun"></span><div class ='text'>Github</div>
+          </a>
+        </li>
+        <li class = "li-nav">
+          <a class="a-nav" href="https://www.linkedin.com/in/tan-le-164679233/" target="_blank">
+            <span class="lnr lnr-star"></span><div class ='text'>LinkedIn</div>
+          </a>
+        </li>
+        <li class = "li-nav">
+          <a class="a-nav" href="#">
+            <i class="fa-brands fa-angellist"></i><div class ='text'>Mini-Game</div>
+          </a>
+        </li>
+      </ul>
+    </nav>
+    <main>
+      <form class="new" action="/" method="post">
+        <div class="new-title">
+          Title: <input type="text" name="title"><br>
+        </div>
+        <div class="new-text">
+          Text: <input type="text" name="text"><br>
+        </div>
+        <div class="new-image">
+          Image: <input type="url" name="image"><br>
+        </div>
+        <div class="new-video">
+          Video: <input type="url" name="video"><br>
+        </div>
+        <div class="new-submit">
+          <input type="submit" name="" value="Submit post">
+        </div>
+      </form>
+    </main>
   </body>
 </html>

@@ -9,7 +9,7 @@ const db = mongoose.connection;
 require('dotenv').config()
 const Social = require('./models/schema.js')
 const seed = require('./models/seed.js')
-
+// const Social2 = require('./models/schema2.js')
 //___________________
 //Port
 //___________________
@@ -88,6 +88,13 @@ app.post('/', (req,res) => {
     res.redirect('/')
   })
 })
+
+
+// app.post('/', (req,res) => {
+//   Social2.create(req.body, (err, data) => {
+//     res.redirect('/')
+//   })
+// })
 
 
 app.get('/seed', (req,res) => {

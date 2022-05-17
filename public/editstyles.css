@@ -1,0 +1,118 @@
+@import url('https://fonts.googleapis.com/css2?family=Courgette&display=swap');
+
+* {
+  font-family: 'Courgette', cursive;
+  font-size: 20px;
+  --text-primary:white;
+  --text-secondary:#F7F7FF;
+  --bg-primary:#8490AD;
+  --bg-secondary:#4F5769;
+}
+
+body {
+  color: black;
+  background:white;
+  margin: 0;
+  padding: 0;
+}
+
+body::-webkit-scrollbar {
+  width: 0.5em;
+}
+
+body::-webkit-scrollbar-track {
+  background: #D4C9F8;
+}
+body::-webkit-scrollbar-thumb {
+  background: #BFD1FC;
+  border: 1px solid grey;
+}
+
+main {
+  margin-left: 5em;
+  padding: 1em;
+  height:100vh;
+}
+
+.left-nav {
+  width: 5em;
+  height: 100vh;
+  position:fixed;
+  background: var(--bg-primary);
+  transition: 300ms ease;
+}
+
+.ul-nav {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  height:100%;
+}
+
+.li-nav {
+  width:100%;
+}
+
+.li-nav:last-child{
+  margin-top: auto;
+}
+
+span, i{
+  font-size: 3em;
+  color:pink;
+}
+
+.a-nav {
+  text-decoration: none;
+  display:flex;
+  align-items: center;
+  justify-content: space-around;
+  height:5em;
+  color: var(--text-primary);
+  margin-bottom: 2em;
+  filter: grayscale(100%) opacity(0.6);
+  transition: 200ms ease;
+}
+
+.a-nav:hover{
+  filter:grayscale(0%) opacity(1);
+  background: var(--bg-secondary);
+}
+
+.text {
+  display:none;
+  color:pink
+}
+.left-nav:hover{
+  width: 15em;
+}
+
+.left-nav:hover .text {
+  display:block;
+}
+
+.fa-solid {
+  transform: rotate(0deg);
+  transition: 400ms ease;
+}
+
+.left-nav:hover .fa-solid {
+  transform: rotate(-180deg)
+}
+
+main{
+background:#FDD9CE;
+}
+
+form {
+  display:flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: center;
+  gap:3em;
+  background:#FDD9CE;
+  height:100vh;
+}
