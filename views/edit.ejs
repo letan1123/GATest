@@ -31,18 +31,26 @@
           </a>
         </li>
         <li class = "li-nav">
-          <a class="a-nav" href="#">
-            <i class="fa-brands fa-angellist"></i><div class ='text'>Mini-Game</div>
+          <a class="a-nav" href="/map">
+            <i class="fa-brands fa-angellist"></i><div class ='text'>Bucket List</div>
           </a>
         </li>
       </ul>
     </nav>
     <main>
       <form class="edit" action="/<%=post._id%>?_method=PUT" method="post">
-        Title: <input type="text" name="title" placeholder="<%=post.title%>"><br>
-        Text: <input type="text" name="text" placeholder="<%=post.text%>"><br>
-        Image: <input type="url" name="image" placeholder="url"><br>
-        Video: <input type="url" name="video" placeholder="url"><br>
+        <div class="title">
+          <textarea name="title" placeholder="title: <%=post.title%>" rows="1" cols="80"></textarea><br>
+        </div>
+        <div class="edit-text">
+          <textarea name="text" placeholder="<%=post.text%>" rows="8" cols="80"></textarea><br>
+        </div>
+        <div class="image">
+          Picture goes here:<input type="url" name="media.image" value="<%=post.media.image%>">
+        </div>
+        <div class="video">
+          Video goes here:<input type="url" name="media.video" value="<%=post.media.video%>">
+        </div>
         <input type="submit" name="" value="Submit changes">
       </form>
     </main>

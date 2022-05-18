@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="mapstyles.css">
+    <link rel="stylesheet" href="https://cdn.linearicons.com/free/1.0.0/icon-font.min.css">
+    <script src="https://kit.fontawesome.com/973db4e21f.js" crossorigin="anonymous"></script>
+    <title></title>
+  </head>
+  <body>
+    <nav class="left-nav">
+      <ul class ="ul-nav">
+        <li class = "li-nav">
+          <a class="a-nav" href="/">
+            <i class="fa-solid fa-angles-right"></i>
+          </a>
+        </li>
+        <li class = "li-nav">
+          <a class="a-nav" href="/new">
+            <span class="lnr lnr-rocket"></span><div class ='text'>New Post</div>
+          </a>
+        </li>
+        <li class = "li-nav">
+          <a class="a-nav" href="https://github.com/letan1123" target="_blank">
+            <span class="lnr lnr-sun"></span><div class ='text'>Github</div>
+          </a>
+        </li>
+        <li class = "li-nav">
+          <a class="a-nav" href="https://www.linkedin.com/in/tan-le-164679233/" target="_blank">
+            <span class="lnr lnr-star"></span><div class ='text'>LinkedIn</div>
+          </a>
+        </li>
+        <li class = "li-nav">
+          <a class="a-nav" href="/map">
+            <i class="fa-brands fa-angellist"></i><div class ='text'>Bucket List</div>
+          </a>
+        </li>
+      </ul>
+    </nav>
+    <main>
+      <form class="map" action="/map" method="post">
+        <label for="start">Start date:</label>
+        <input type="date" name="date" id="start" value="2022-05-19" min="2022-05-01" max="2099-12-31"><br>
+        <label for="budget">Budget</label>
+        <select id="budget" name="budget">
+          <option value="small">$0-1000</option>
+          <option value="adequate">$1000-2000</option>
+          <option value="big">$2000-5000</option>
+          <option value="rich">$5000+</option>
+        </select><br>
+        <label for="time">How long should your vacation be?</label>
+        <select id="time" name="time">
+          <option value="1week">1 week</option>
+          <option value="2weeks">2 weeks</option>
+          <option value="3weeks">3 weeks</option>
+          <option value="4weeks">4 weeks</option>
+        </select><br>
+        <input type="submit" name="" value="Let's get packing!">
+      </form>
+      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d26370843.03219371!2d-113.70796608402796!3d36.212835977940344!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x54eab584e432360b%3A0x1c3bb99243deb742!2sUnited%20States!5e0!3m2!1sen!2sus!4v1652885689891!5m2!1sen!2sus" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </main>
+  </body>
+</html>

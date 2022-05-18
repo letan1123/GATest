@@ -9,7 +9,7 @@ const db = mongoose.connection;
 require('dotenv').config()
 const Social = require('./models/schema.js')
 const seed = require('./models/seed.js')
-// const Social2 = require('./models/schema2.js')
+const Map = require('./models/schema2.js')
 //___________________
 //Port
 //___________________
@@ -55,6 +55,13 @@ app.use(methodOverride('_method'));// allow POST, PUT and DELETE from a form
 //___________________
 
 
+app.use('/map', (req,res) => {
+  Social.find({}, (err,data) => {
+    res.render('map.ejs')
+  })
+})
+
+
 app.get('/:id/edit', (req,res) => {
   Social.findById(req.params.id, (err,data) => {
     res.render('edit.ejs', {
@@ -90,11 +97,11 @@ app.post('/', (req,res) => {
 })
 
 
-// app.post('/', (req,res) => {
-//   Social2.create(req.body, (err, data) => {
-//     res.redirect('/')
-//   })
-// })
+app.post('/map', (req,res) => {
+  Map.create(req.body, (err, data) => {
+    res.redirect('/map')
+  })
+})
 
 
 app.get('/seed', (req,res) => {
@@ -105,9 +112,9 @@ app.get('/seed', (req,res) => {
 
 
 app.get('/:id', (req,res) => {
-  Social.findById(req.params.id, (err,data) => {
+  Social.findById(req.params.id, (err,editPost) => {
     res.render('show.ejs', {
-      post:data
+      post:editPost
     })
   })
 })
@@ -120,6 +127,7 @@ app.use('/', (req,res) => {
     })
   })
 })
+
 
 
 //localhost:3000
