@@ -5,7 +5,7 @@
     <link rel="stylesheet" href="showstyles.css">
     <link rel="stylesheet" href="https://cdn.linearicons.com/free/1.0.0/icon-font.min.css">
     <script src="https://kit.fontawesome.com/973db4e21f.js" crossorigin="anonymous"></script>
-    <title><%=post.title%></title>
+    <title><%=social.title%></title>
   </head>
   <body>
     <nav class="left-nav">
@@ -40,25 +40,25 @@
     <main>
       <div class="show-text-container">
         <div class="show-title">
-          <h1><%=post.title%></h1>
+          <h1><%=social.title%></h1>
         </div>
         <div class="show-text">
-          <h2><%=post.text%></h2>
+          <h2><%=social.text%></h2>
         </div>
       </div>
       <div class="media-container">
-        <% if(post.media.image == '' && post.media.video == '') { %>
+        <% if(social.media.image == '' && social.media.video == '') { %>
           <p>Go back to homepage and edit to add picture</p>
           <p>Go back to homepage and edit to add video</p>
-        <%} else if(post.media.video == '') {%>
+        <%} else if(social.media.video == '') {%>
           <img src="<%=post.media.image%>" alt=""><br>
           <p>Go back to homepage and edit to add video</p>
-        <%} else if (post.media.image == '') {%>
+        <%} else if (social.media.image == '') {%>
           <p>Go back to homepage and edit to add picture</p>
-          <iframe src="<%=post.media.video%>" width="350"   height="350"></iframe><br>
+          <iframe src="<%=social.media.video%>" width="350"   height="350"></iframe><br>
         <%} else {%>
-          <img src="<%=post.media.image%>" alt=""><br>
-          <iframe src="<%=post.media.video%>" width="350"   height="350"></iframe><br>
+          <img src="<%=social.media.image%>" alt=""><br>
+          <iframe src="<%=social.media.video%>" width="350"   height="350"></iframe><br>
         <%}%>
       </div>
     </main>

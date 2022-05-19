@@ -1,9 +1,10 @@
 const mongoose = require('mongoose')
 
 const mapSchema = new mongoose.Schema ({
-  date: Date,
+  date: {type:String, default:Date},
   budget:Number,
-  time:String
+  time:String,
+  country:String
 })
 
 const mapCollection = mongoose.model('Map', mapSchema)

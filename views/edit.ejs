@@ -40,16 +40,16 @@
     <main>
       <form class="edit" action="/<%=post._id%>?_method=PUT" method="post">
         <div class="title">
-          <textarea name="title" placeholder="title: <%=post.title%>" rows="1" cols="80"></textarea><br>
+          <textarea name="title" placeholder="title: <%=post.title%>" rows="1" cols="80"><%=post.title%></textarea><br>
         </div>
         <div class="edit-text">
-          <textarea name="text" placeholder="<%=post.text%>" rows="8" cols="80"></textarea><br>
+          <textarea name="text" placeholder="<%=post.text%>" rows="8" cols="80"><%=post.text%></textarea><br>
         </div>
         <div class="image">
-          Picture goes here:<input type="url" name="media.image" value="<%=post.media.image%>">
+          Picture goes here:<textarea name="media.image" placeholder="title: <%=post.image%>" rows="2" cols="80"><%=post.media.image%></textarea><br>
         </div>
         <div class="video">
-          Video goes here:<input type="url" name="media.video" value="<%=post.media.video%>">
+          Video goes here:<textarea name="media.video" placeholder="title: <%=post.video%>" rows="2" cols="80"><%=post.media.video%></textarea><br>
         </div>
         <input type="submit" name="" value="Submit changes">
       </form>

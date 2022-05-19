@@ -10,6 +10,8 @@ require('dotenv').config()
 const Social = require('./models/schema.js')
 const seed = require('./models/seed.js')
 const Map = require('./models/schema2.js')
+const bucketSeed  = require('./models/seed2.js')
+const bcrypt = require('bcrypt')
 //___________________
 //Port
 //___________________
@@ -55,6 +57,35 @@ app.use(methodOverride('_method'));// allow POST, PUT and DELETE from a form
 //___________________
 
 
+app.delete('/map/list/:id', (req,res) => {
+  Map.findByIdAndRemove(req.params.id, (err,data) => {
+    res.redirect('/map/list')
+  })
+})
+
+
+app.post('/map/list', (req,res) => {
+  Map.create(req.body, (err, data) => {
+    res.redirect('/map')
+  })
+})
+
+app.use('/map/list', (req,res) => {
+  Map.find({}, (err,data) => {
+    res.render('bucketlist.ejs', {
+      lists: data
+    })
+  })
+})
+
+
+app.get('/map/seed', (req,res) => {
+  Map.create(bucketSeed, (err,seed) => {
+    res.redirect('/map/list')
+  })
+})
+
+
 app.use('/map', (req,res) => {
   Social.find({}, (err,data) => {
     res.render('map.ejs')
@@ -97,13 +128,6 @@ app.post('/', (req,res) => {
 })
 
 
-app.post('/map', (req,res) => {
-  Map.create(req.body, (err, data) => {
-    res.redirect('/map')
-  })
-})
-
-
 app.get('/seed', (req,res) => {
   Social.create(seed, (err,seed) => {
     res.redirect('/')
@@ -114,7 +138,7 @@ app.get('/seed', (req,res) => {
 app.get('/:id', (req,res) => {
   Social.findById(req.params.id, (err,editPost) => {
     res.render('show.ejs', {
-      post:editPost
+      social:editPost
     })
   })
 })
@@ -127,6 +151,7 @@ app.use('/', (req,res) => {
     })
   })
 })
+
 
 
 
